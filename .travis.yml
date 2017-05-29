@@ -7,6 +7,9 @@ addons:
             - clang-3.8
             - g++-6
             - gcc-6
+compiler:
+  - clang
+  - g++
 
 install:
     - if [ "$CXX" = "g++" ]; then export CXX="g++-6" CC="gcc-6"; fi
