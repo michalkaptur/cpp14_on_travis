@@ -15,8 +15,7 @@ matrix:
         - env: CXX=clang++ CC=clang
 
 script:
-  - which $CXX
-  - which $CC
+  - find /usr/local -name "clang*" -type f
   - mkdir build && cd build
   - cmake ..
   - make
