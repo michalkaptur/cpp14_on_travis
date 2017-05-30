@@ -12,10 +12,9 @@ language: generic
 matrix:
     include:
         - env: CXX=g++-6 CC=gcc-6
-        - env: CXX=clang++ CC=clang
+        - env: CXX=clang-3.8
 
 script:
-  - find / -name "clang*"
   - mkdir build && cd build
   - cmake ..
   - make
