@@ -1,18 +1,24 @@
-addons:
-    apt:
-        sources:
-            - llvm-toolchain-precise
-            - ubuntu-toolchain-r-test
-        packages:
-            - clang-3.7
-            - g++-6
-            - gcc-6
-            
-language: generic
+language: cpp
 matrix:
-    include:
-        - env: CXX=g++-6 CC=gcc-6
-        - env: CXX=clang++-3.7 CXX=clang-3.7
+  - compiler: gcc
+    addons:
+        apt:
+            sources:
+                - ubuntu-toolchain-r-test
+            packages:
+                - g++-6
+                - gcc-6
+    env: CXX=g++-6 CC=gcc-6
+    
+  - compiler: clang
+    addons:
+        apt:
+            sources:
+                - ubuntu-toolchain-r-test
+                - llvm-toolchain-precise-3.8
+            packages:
+                - clang-3.8
+    env: CXX=clang++-3.8 CXX=clang-3.8
 
 script:
   - mkdir build && cd build
