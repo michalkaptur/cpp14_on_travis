@@ -9,7 +9,7 @@ matrix:
             packages:
                 - g++-6
                 - gcc-6
-    env: CXX=g++-6 CC=gcc-6
+    env: COMPILER=g++-6
     
   - compiler: clang
     addons:
@@ -19,7 +19,7 @@ matrix:
                 - llvm-toolchain-precise-3.8
             packages:
                 - clang-3.8
-    env: CXX=clang++-3.8 CXX=clang-3.8
+    env: COMPILER=clang++-3.8
 
 script:
   - mkdir build && cd build
