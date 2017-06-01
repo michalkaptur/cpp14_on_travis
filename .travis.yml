@@ -1,10 +1,15 @@
-language: generic
+language: generic #language: cpp overwrites CXX/CC variables
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+
+
 matrix:
   include:
   - addons:
         apt:
-            sources:
-                - ubuntu-toolchain-r-test
             packages:
                 - g++-6
                 - gcc-6
@@ -13,7 +18,6 @@ matrix:
   - addons:
         apt:
             sources:
-                - ubuntu-toolchain-r-test
                 - llvm-toolchain-precise-3.8
             packages:
                 - clang-3.8
