@@ -1,4 +1,5 @@
 --- 
+dist: trusty
 language: generic
 matrix: 
   include: 
@@ -15,11 +16,11 @@ matrix:
       addons: 
         apt: 
           packages: 
-            - clang-3.8
+            - clang-4.0
           sources: 
             - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.8
-      env: "CXX=clang++-3.8 CC=clang-3.8"
+            - llvm-toolchain-trusty-4.0
+      env: "CXX=clang++-4.0 CC=clang-4.0"
 script: 
   - "mkdir build && cd build"
   - "cmake .."
