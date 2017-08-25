@@ -1,10 +1,12 @@
 #include <iostream>
 #include <string>
+#include <memory>
 
 auto hello_cpp14() {
-  return std::string("Hello world");
+  return std::string("Hello world!");
 }
 
 int main() {
-  std::cout<<hello_cpp14()<<std::endl;
+  auto hello = std::make_unique<std::string>(hello_cpp14());
+  std::cout<<*hello<<std::endl;
 }
