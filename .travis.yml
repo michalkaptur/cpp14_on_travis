@@ -20,9 +20,9 @@ matrix:
           sources: 
             - ubuntu-toolchain-r-test
             - llvm-toolchain-trusty-4.0
-      env: "CXX=clang++-4.0 CC=clang-4.0 LIBS=-nodefaultlibs -lc++ -lc++abi -lm -lc -lgcc_s -lgcc CXXFLAGS=-I/usr/local/include/c++/v1 "
+      env: "CXX=clang++-4.0 CC=clang-4.0 CXX_FLAGS=-stdlib=libc++ -lc++abi"
 script: 
   - "mkdir build && cd build"
   - "cmake .."
-  - make
+  - make VERBOSE=1
   - ./hello
