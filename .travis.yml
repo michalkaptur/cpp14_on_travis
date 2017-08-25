@@ -17,10 +17,12 @@ matrix:
         apt: 
           packages: 
             - clang-4.0
+            - libc++-dev
+            - libc++abi-dev
           sources: 
             - ubuntu-toolchain-r-test
             - llvm-toolchain-trusty-4.0
-      env: "CXX=clang++-4.0 CC=clang-4.0 CXX_FLAGS=-stdlib=libc++ -lc++abi"
+      env: "CXX=clang++-4.0 CC=clang-4.0"
 script: 
   - "mkdir build && cd build"
   - "cmake .."
