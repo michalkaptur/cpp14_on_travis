@@ -17,7 +17,8 @@ matrix:
         apt: 
           packages: 
             - clang-4.0
-            - g++-6 #needed for stdlib
+            - libc++-dev
+            - libc++abi-dev
           sources: 
             - ubuntu-toolchain-r-test
             - llvm-toolchain-trusty-4.0
@@ -25,5 +26,5 @@ matrix:
 script: 
   - "mkdir build && cd build"
   - "cmake .."
-  - make
+  - make VERBOSE=1
   - ./hello
